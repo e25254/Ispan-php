@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .unit {
+            border: 1px dotted blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <form action="upload.php" method="POST" enctype="multipart/form-data">
+        <div class="unit">
+            <input type="text" name="myname[]" placeholder="my name">
+            <br>
+            <input type="file" name="photo[]" accept="image/png,image/jpeg">
+            <br>
+        </div>
+        <div class="unit">
+            <input type="text" name="myname[]" placeholder="my name">
+            <br>
+            <input type="file" name="photo[]" accept="image/png,image/jpeg">
+            <br>
+        </div>
+
+        <button>上傳</button>
+    </form>
+
+</body>
+</html>

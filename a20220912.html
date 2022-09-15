@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="loadData()">load</button>
+    <pre id="info"></pre>
+
+    <script>
+        function loadData() {
+
+            fetch('a20220908-session.php')
+                .then(r => r.json())
+                .then(obj => {
+                    console.log(obj);
+                    const str = JSON.stringify(obj, null, 4);
+
+                    document.querySelector('#info').innerHTML = 
+                        str.replaceAll('<','&lt;').replaceAll('>','&gt;');
+                    console.log(document.querySelector('#info').innerHTML);
+                    
+
+                })
+
+
+        }
+
+    </script>
+</body>
+
+</html>

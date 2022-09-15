@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        const s1 = Symbol('hello');
+        const s2 = Symbol('hi');
+        const obj = {
+            [s1]: '你好',
+            [s2]: '嗨',
+            name: 'david',
+            age: 20
+        };
+
+        for(let i in obj){
+            console.log(i, obj[i]);
+        }
+        console.log(Object.getOwnPropertySymbols(obj));
+        console.log(Object.getOwnPropertyNames(obj));
+        const sb = Object.getOwnPropertySymbols(obj);
+        
+        console.log(obj[sb[0]]);
+    </script>
+</body>
+</html>

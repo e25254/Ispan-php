@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">btn</button>
+    <script>
+        console.log(this); // window
+
+        const obj = {
+            a: 'shin',
+            b: 12,
+            f1: function(){
+                console.log(this);
+                return this.b+1;
+            }, 
+            f2(){
+                console.log(this);
+            },
+            f3: ()=>{
+                console.log(this);
+            },
+            f4: function(){
+                return ()=>{
+                    console.log(this);
+                }
+            }
+        }
+
+
+        console.log(obj.f1());
+        console.log(obj.f2());
+        console.log(obj.f3());
+        console.log(obj.f4());
+        console.log(obj.f4()());
+
+
+
+    </script>
+</body>
+</html>

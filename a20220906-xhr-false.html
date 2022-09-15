@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a20220906</title>
+</head>
+<body>
+    <button onclick="loadData(event)">load</button>
+    <div id="info"></div>
+    <input type="text">
+
+    <script>
+        function loadData(){
+            let xhr = new XMLHttpRequest;
+            xhr.open('get','a20220906-delay.php',false); //同步
+            xhr.send();
+            document.querySelector('#info').innerHTML = xhr.responseText
+        }
+
+    </script>
+</body>
+</html>

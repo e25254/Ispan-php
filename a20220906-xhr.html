@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a20220906</title>
+</head>
+<body>
+    <button onclick="loadData()">load</button>
+    <div id="info"></div>
+    <img src="data/data.txt" alt="">
+
+    <script>
+        function loadData(){
+            let xhr = new XMLHttpRequest;
+            xhr.onload = function(){
+                document.querySelector('#info').innerHTML = xhr.responseText;
+            }
+
+            xhr.open('get','data/data.txt');
+            xhr.send();
+            
+        }
+
+    </script>
+</body>
+</html>

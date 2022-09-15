@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let myData;
+        fetch('test.php')
+        .then(function(r){
+            return r.json()
+        }).then(function(ar){
+            myData = ar;
+            
+            // sid排序
+            // myData.sort(function(a,b){
+            //     return a.sid - b.sid
+            // })
+            // console.log(myData);
+
+            // 字串排序
+            // myData.sort(function(a,b){
+            //     return a.name > b.name ? 1 : -1;    
+            // })      
+            // console.log(myData);
+
+            //亂數排序
+            myData.sort(function(){
+                return Math.random() -.5
+            })
+            console.log(myData);
+
+        })
+    </script>
+</body>
+</html>

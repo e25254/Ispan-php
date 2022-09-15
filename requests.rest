@@ -1,0 +1,14 @@
+###
+GET http://localhost/Jiephp/a20220906-form.php?
+
+
+
+###
+POST http://localhost/Jiephp/a20220906-form.php?
+Content-Type: application/x-www-form-urlencoded
+
+email=123@gmail.com&password=1235&cb=no&mydatetime=20220906T12:23
+
+
+
+###

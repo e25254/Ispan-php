@@ -1,0 +1,9 @@
+錯誤的類型
+    error
+    warning
+    notice
+
+錯誤的形式
+    1.parse error : 語法錯誤
+    2.執行時期錯誤
+    3.邏輯錯誤

@@ -15,36 +15,22 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                
+
             </div>
         </div>
     </div>
 
     <script>
-        let btntp1 = function ({sid , name}) {
-            return `<button type="button" class="btn btn-info" data-val="${sid}">${name}</button> `
+        let btntp1 = function ({ sid, name }) {
+            return `<button type="button" onclick="console.log(${sid})" class="btn btn-info" data-val="${sid}">${name}</button> `
         }
-
         fetch('test.php')
-        .then(function(r){
-            return r.json()
-        })
-        .then(function(ar){
-            let strAR = ar.map(function(item){
-                return btntp1(item)
+            .then(function (r) {
+                return r.json()
             })
-            document.querySelector('.col').innerHTML = strAR.join('')
-            console.log(strAR);
-
-            document.querySelector('.container').addEventListener('click',function(event){
-                let t = event.target
-                // console.log(t.tagName);
-                if(t.tagName.toLowerCase() =='button'){
-                    console.log(t.getAttribute('data-val'))
-                }
-                // t.classList.contains()
+            .then(function (ar) {
+                document.querySelector('.col').innerHTML = ar.map(item => btntp1(item)).join("");
             })
-        })
 
 
 

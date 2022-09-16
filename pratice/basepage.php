@@ -3,6 +3,9 @@
 // 每頁最多呈現幾筆資料
 $perpage = 20 ; 
 
+// 用戶要呈現的是第幾頁 有指定的話把數值轉換成整數 沒有指定的話給 1 這個值
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1 ;
+
 // 先來計算總筆數 做出分頁按鈕
 // 先寫 ＳＱＬ
 
@@ -16,7 +19,11 @@ $totalRow = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
 $totalPage = ceil($totalRow/$perpage);
 
 
-echo json_encode($totalPage);
+echo json_encode([
+    "totalRow" => $totalRow,
+    "totalPage" => $totalPage,
+    "page" => $page
+] );
 exit;
 
 ?>
